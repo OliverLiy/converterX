@@ -1,12 +1,21 @@
 <idea-plugin>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <id>top.codeease</id>
   <name>ConverterX</name>
   <vendor email="974474148@qq.com" url="https://codeease.top">CodeEase</vendor>
   <description>
-    一款用于帮助使用 IntelliJ IDEA 编写代码的研发人员，快速进行字符串、JSON、日期转换等功能的插件工具。
-    &lt;br/&gt;
     A plugin tool designed to assist developers using IntelliJ IDEA in writing code, providing quick functionality for string, JSON, and date conversions.
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;b&gt;English Introduction&lt;/b&gt;
+    &lt;ul&gt;
+    &lt;li&gt;1. Select the string you want to convert, right-click, and choose "String Converter" in ConvertX. You can convert the string to various formats like camel case.&lt;/li&gt;
+    &lt;li&gt;2. Select the time format string you want to convert, right-click, and choose "Date Converter" in ConvertX. You can convert the time to various formats like timestamps.&lt;/li&gt;
+    &lt;li&gt;3. Select the JSON string you want to convert, right-click, and choose "JSON Converter" in ConvertX. You can perform operations like compression and formatting on the JSON.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;br/&gt;
+    一款用于帮助使用 IntelliJ IDEA 编写代码的研发人员，快速进行字符串、JSON、日期转换等功能的插件工具。
     &lt;br/&gt;
     &lt;br/&gt;
     &lt;b&gt;中文介绍&lt;/b&gt;
@@ -15,20 +24,28 @@
          &lt;li&gt;2. 选中你要转换的时间格式的字符串，右键，在 ConvertX 中选择 Date Converter，你可以将时间转化为时间戳等一系列格式。&lt;/li&gt;
          &lt;li&gt;3. 选中你要转换的JSON字符串，右键，在 ConvertX 中选择 JSON Converter，你可以将JSON进行压缩、格式化等操作。&lt;/li&gt;
      &lt;/ul&gt;
-
-     &lt;b&gt;English Introduction&lt;/b&gt;
-     &lt;ul&gt;
-        &lt;li&gt;1. Select the string you want to convert, right-click, and choose "String Converter" in ConvertX. You can convert the string to various formats like camel case.&lt;/li&gt;
-        &lt;li&gt;2. Select the time format string you want to convert, right-click, and choose "Date Converter" in ConvertX. You can convert the time to various formats like timestamps.&lt;/li&gt;
-        &lt;li&gt;3. Select the JSON string you want to convert, right-click, and choose "JSON Converter" in ConvertX. You can perform operations like compression and formatting on the JSON.&lt;/li&gt;
-     &lt;/ul&gt;
     </description>
   <change-notes>
-      Add change notes here.&lt;br&gt;
-      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
+      &lt;h3&gt;V1.0.2&lt;/h3&gt;
+      &lt;ul&gt;
+          &lt;li&gt;Fix conversion anomalies in timestamps.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h3&gt;V1.0.1&lt;/h3&gt;
+      &lt;ul&gt;
+          &lt;li&gt;Support more versions of IDEA.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h3&gt;V1.0.0&lt;/h3&gt;
+      &lt;ul&gt;
+          &lt;li&gt;Provide the ability to convert strings.&lt;/li&gt;
+          &lt;li&gt;Provide the ability to convert date strings.&lt;/li&gt;
+          &lt;li&gt;Provide the ability to format JSON strings.&lt;/li&gt;
+      &lt;/ul&gt;
+    </change-notes>
   <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.java</depends>
   <extensions defaultExtensionNs="com.intellij"/>
-  <idea-version since-build="201.7223" until-build="201.*"/>
+  <idea-version since-build="201.7223"/>
   <actions>
     <group id="ConverterX" text="ConverterX" description="ConverterX" popup="true" icon="/META-INF/logo.png">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
