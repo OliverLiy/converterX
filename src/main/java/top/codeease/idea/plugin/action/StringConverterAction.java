@@ -7,7 +7,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import org.jetbrains.annotations.NotNull;
 import top.codeease.idea.plugin.enums.StringConverterTypeEnum;
-import top.codeease.idea.plugin.exectuor.StringPopupExecutor;
+import top.codeease.idea.plugin.executor.StringPopupExecutor;
 
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +31,5 @@ public class StringConverterAction extends AnAction {
 
         // 在屏幕中间显示列表弹出窗口
         listPopup.showCenteredInCurrentWindow(Objects.requireNonNull(event.getProject()));
-
-
     }
 }

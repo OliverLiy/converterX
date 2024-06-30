@@ -1,8 +1,5 @@
-package top.codeease.idea.plugin.exectuor;
+package top.codeease.idea.plugin.executor;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.PopupStep;
@@ -10,23 +7,24 @@ import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import top.codeease.idea.plugin.enums.StringConverterTypeEnum;
+import top.codeease.idea.plugin.enums.JsonConverterTypeEnum;
 import top.codeease.idea.plugin.process.ReplaceProcess;
-import top.codeease.idea.plugin.strategy.stringStrategy.StringConverterStrategy;
+import top.codeease.idea.plugin.strategy.jsonStrategy.JsonConverterStrategy;
 
 import javax.swing.*;
 import java.util.List;
 
 /**
- * 字符串功能处理器
- * @author ly
+ * @author by: ly
+ * @ClassName: JsonPopupExecutor
+ * @Description:
+ * @Date: 2024/1/5 上午11:34
  */
-public class StringPopupExecutor extends BaseListPopupStep<String> {
-
+public class JsonPopupExecutor extends BaseListPopupStep<String> {
     private Editor editor;
     private Project project;
 
-    public StringPopupExecutor(@NotNull String title, @NotNull List<String> values, Editor editor, Project project) {
+    public JsonPopupExecutor(@NotNull String title, @NotNull List<String> values, Editor editor, Project project) {
         super(title, values);
         this.editor = editor;
         this.project = project;
@@ -39,7 +37,7 @@ public class StringPopupExecutor extends BaseListPopupStep<String> {
         if (StringUtils.isNotBlank(selectedValue)) {
             String selectedText = editor.getSelectionModel().getSelectedText();
             if (StringUtils.isNotBlank(selectedText)){
-                StringConverterStrategy strategyInstance = StringConverterTypeEnum.getStrategyInstance(selectedValue);
+                JsonConverterStrategy strategyInstance = JsonConverterTypeEnum.getStrategyInstance(selectedValue);
                 ReplaceProcess.replaceText(strategyInstance.execute(selectedText), editor, project);
             }
         }

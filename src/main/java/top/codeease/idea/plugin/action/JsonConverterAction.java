@@ -8,9 +8,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import org.jetbrains.annotations.NotNull;
 import top.codeease.idea.plugin.enums.JsonConverterTypeEnum;
-import top.codeease.idea.plugin.enums.StringConverterTypeEnum;
-import top.codeease.idea.plugin.exectuor.JsonPopupExecutor;
-import top.codeease.idea.plugin.exectuor.StringPopupExecutor;
+import top.codeease.idea.plugin.executor.JsonPopupExecutor;
 
 import java.util.List;
 import java.util.Objects;

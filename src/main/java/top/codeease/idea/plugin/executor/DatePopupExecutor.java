@@ -1,21 +1,15 @@
-package top.codeease.idea.plugin.exectuor;
+package top.codeease.idea.plugin.executor;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
-import javafx.util.converter.DateStringConverter;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.codeease.idea.plugin.enums.DateConverterTypeEnum;
-import top.codeease.idea.plugin.enums.StringConverterTypeEnum;
 import top.codeease.idea.plugin.process.ReplaceProcess;
 import top.codeease.idea.plugin.strategy.dateStrategy.DateConverterStrategy;
-import top.codeease.idea.plugin.strategy.stringStrategy.StringConverterStrategy;
 
 import javax.swing.*;
 import java.util.List;
