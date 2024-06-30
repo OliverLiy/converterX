@@ -4,9 +4,18 @@
     <vendor email="974474148@qq.com" url="https://codeease.top">CodeEase</vendor>
 
     <description><![CDATA[
-    一款用于帮助使用 IntelliJ IDEA 编写代码的研发人员，快速进行字符串、JSON、日期转换等功能的插件工具。
-    <br/>
     A plugin tool designed to assist developers using IntelliJ IDEA in writing code, providing quick functionality for string, JSON, and date conversions.
+    <br/>
+    <br/>
+    <b>English Introduction</b>
+    <ul>
+    <li>1. Select the string you want to convert, right-click, and choose "String Converter" in ConvertX. You can convert the string to various formats like camel case.</li>
+    <li>2. Select the time format string you want to convert, right-click, and choose "Date Converter" in ConvertX. You can convert the time to various formats like timestamps.</li>
+    <li>3. Select the JSON string you want to convert, right-click, and choose "JSON Converter" in ConvertX. You can perform operations like compression and formatting on the JSON.</li>
+    </ul>
+
+    <br/>
+    一款用于帮助使用 IntelliJ IDEA 编写代码的研发人员，快速进行字符串、JSON、日期转换等功能的插件工具。
     <br/>
     <br/>
     <b>中文介绍</b>
@@ -15,16 +24,17 @@
          <li>2. 选中你要转换的时间格式的字符串，右键，在 ConvertX 中选择 Date Converter，你可以将时间转化为时间戳等一系列格式。</li>
          <li>3. 选中你要转换的JSON字符串，右键，在 ConvertX 中选择 JSON Converter，你可以将JSON进行压缩、格式化等操作。</li>
      </ul>
-
-     <b>English Introduction</b>
-     <ul>
-        <li>1. Select the string you want to convert, right-click, and choose "String Converter" in ConvertX. You can convert the string to various formats like camel case.</li>
-        <li>2. Select the time format string you want to convert, right-click, and choose "Date Converter" in ConvertX. You can convert the time to various formats like timestamps.</li>
-        <li>3. Select the JSON string you want to convert, right-click, and choose "JSON Converter" in ConvertX. You can perform operations like compression and formatting on the JSON.</li>
-     </ul>
     ]]></description>
 
     <change-notes><![CDATA[
+      <h3>V1.0.2</h3>
+      <ul>
+          <li>Fix conversion anomalies in timestamps.</li>
+      </ul>
+      <h3>V1.0.1</h3>
+      <ul>
+          <li>Support more versions of IDEA.</li>
+      </ul>
       <h3>V1.0.0</h3>
       <ul>
           <li>Provide the ability to convert strings.</li>
@@ -36,9 +46,11 @@
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>·
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+
     </extensions>
 
     <idea-version since-build="201.7223"/>

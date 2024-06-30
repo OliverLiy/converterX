@@ -1,5 +1,7 @@
 package top.codeease.idea.plugin.util;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -14,8 +16,15 @@ import java.time.format.DateTimeParseException;
  */
 public class MyDateUtils {
     public static LocalDateTime convertToDateTime(String input) {
+        if (StringUtils.isBlank(input)){
+            return null;
+        }
         try {
+            int timeStampSecondLength = 10;
             long timestamp = Long.parseLong(input);
+            if (input.toCharArray().length==timeStampSecondLength){
+                return LocalDateTime.ofInstant(Instant.ofEpochSecond(timestamp),ZoneOffset.UTC);
+            }
             return LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneOffset.UTC);
         } catch (NumberFormatException e) {
             // 输入不是时间戳，继续解析为日期时间格式

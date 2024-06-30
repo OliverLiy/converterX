@@ -4,7 +4,11 @@ plugins {
 }
 
 group 'top.codeease'
-version '1.0.0'
+version '1.0.2'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
 
 repositories {
     mavenCentral()
@@ -19,9 +23,6 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2020.1.1'
-}
-patchPluginXml {
-    changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+    plugins = ['git4idea', 'java']
+    updateSinceUntilBuild = false
 }

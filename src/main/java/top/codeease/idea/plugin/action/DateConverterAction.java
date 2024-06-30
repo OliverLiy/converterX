@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author by: ly
+ * @author by: 神秘的鱼仔
  * @ClassName: DateFormatAction
  * @Description: 日期格式化动作
  * @Date: 2023/12/27 下午11:44
@@ -34,3 +34,4 @@ public class DateConverterAction extends AnAction {
         listPopup.showCenteredInCurrentWindow(Objects.requireNonNull(event.getProject()));
     }
 }
+

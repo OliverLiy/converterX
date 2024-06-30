@@ -38,8 +38,10 @@ public class JsonPopupExecutor extends BaseListPopupStep<String> {
         // 处理选中的值
         if (StringUtils.isNotBlank(selectedValue)) {
             String selectedText = editor.getSelectionModel().getSelectedText();
-            JsonConverterStrategy strategyInstance = JsonConverterTypeEnum.getStrategyInstance(selectedValue);
-            ReplaceProcess.replaceText(strategyInstance.execute(selectedText), editor, project);
+            if (StringUtils.isNotBlank(selectedText)){
+                JsonConverterStrategy strategyInstance = JsonConverterTypeEnum.getStrategyInstance(selectedValue);
+                ReplaceProcess.replaceText(strategyInstance.execute(selectedText), editor, project);
+            }
         }
         // 如果是最终选择，则关闭弹出窗口
         return finalChoice ? PopupStep.FINAL_CHOICE : super.onChosen(selectedValue, finalChoice);
