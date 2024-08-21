@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'top.codeease'
-version '1.0.2'
+version '1.0.3'
 
 apply plugin: 'java'
 apply plugin: 'idea'

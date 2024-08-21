@@ -37,6 +37,8 @@ public enum StringConverterTypeEnum {
      */
     TO_UNDERLINE_LOWER("UnderlineLower (code_ease)", UnderlineLowerStringConverter.class)
 
+
+
     ;
     private String typeName;
     private Class<? extends StringConverterStrategy> strategyClass;

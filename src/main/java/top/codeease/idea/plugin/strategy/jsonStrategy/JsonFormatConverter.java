@@ -13,7 +13,7 @@ public class JsonFormatConverter implements JsonConverterStrategy{
     @Override
     public String execute(String msg) {
         try {
-            JSONObject jsonObject = JSON.parseObject(msg);
+            Object jsonObject = JSON.parse(msg);
             return JSON.toJSONString(jsonObject, true);
         }catch (Exception exception){
             // 如果无法转换说明JSON有问题，不对该JSON串做处理

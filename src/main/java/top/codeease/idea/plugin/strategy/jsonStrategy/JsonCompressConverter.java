@@ -14,7 +14,7 @@ public class JsonCompressConverter implements JsonConverterStrategy{
     @Override
     public String execute(String msg) {
         try {
-            JSONObject jsonObject = JSON.parseObject(msg);
+            Object jsonObject = JSON.parse(msg);
             // 序列化时开启压缩特性
             return JSON.toJSONString(jsonObject,SerializerFeature.WriteNonStringValueAsString);
         }catch (Exception exception){
